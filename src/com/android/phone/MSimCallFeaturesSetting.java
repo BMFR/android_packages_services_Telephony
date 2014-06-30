@@ -21,8 +21,6 @@ package com.android.phone;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -72,6 +70,7 @@ public class MSimCallFeaturesSetting extends CallFeaturesSetting {
     // To track whether a confirmation dialog was clicked.
     private boolean mDialogClicked;
     private Dialog mWaiverDialog;
+
     private CheckBoxPreference mAllowCallRecording;
     private PreferenceScreen mButtonXDivert;
     private int mNumPhones;
@@ -166,9 +165,7 @@ public class MSimCallFeaturesSetting extends CallFeaturesSetting {
             mAllowCallRecording.setChecked(Settings.System.getBoolean(getContentResolver(),
                     Settings.System.ALLOW_CALL_RECORDING, false));
         }
-
     }
-
 
     @Override
     protected void onCreateVoicemailPrefs(Bundle savedInstanceState) {
