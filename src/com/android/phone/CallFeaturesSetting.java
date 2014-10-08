@@ -2730,7 +2730,7 @@ public class CallFeaturesSetting extends PreferenceActivity
         }
     }
 
-    private void setPrefenceKeyForSubscription(Preference preference) {
+    protected void setPreferenceKeyForSubscription(Preference preference) {
         if (mSubscription == -1 || preference == null) return;
         String key = preference.getKey() + mSubscription;
         preference.setKey(key);
