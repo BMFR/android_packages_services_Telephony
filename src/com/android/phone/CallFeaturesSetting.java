@@ -2730,7 +2730,6 @@ public class CallFeaturesSetting extends PreferenceActivity
         }
     }
 
-
     private static void log(String msg) {
         if (DBG)  Log.d(LOG_TAG, msg);
     }
