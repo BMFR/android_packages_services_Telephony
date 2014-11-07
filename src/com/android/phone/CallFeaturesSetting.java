@@ -44,6 +44,7 @@ import android.os.AsyncResult;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
@@ -2750,7 +2751,7 @@ public class CallFeaturesSetting extends PreferenceActivity
             preferenceScreen.removePreference(mButtonProximity);
             mButtonProximity = null;
         }
-        if (!getResources().getBoolean(R.bool.config_ip_prefix_enable) &&
+        if (!SystemProperties.getBoolean("persist.radio.ipcall.enabled", false) &&
                 mIPPrefix != null) {
             preferenceScreen.removePreference(mIPPrefix);
             mIPPrefix = null;
